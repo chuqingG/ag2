@@ -76,7 +76,7 @@ import os
 import re
 import time
 import warnings
-from typing import Any, Optional, Type
+from typing import Any, Optional
 
 from openai.types.chat import ChatCompletion, ChatCompletionMessageToolCall
 from openai.types.chat.chat_completion import ChatCompletionMessage, Choice
@@ -170,7 +170,7 @@ class AnthropicClient:
         self._last_tooluse_status = {}
 
         # Store the response format, if provided (for structured outputs)
-        self._response_format: Optional[Type[BaseModel]] = None
+        self._response_format: Optional[type[BaseModel]] = None
 
     def load_config(self, params: dict[str, Any]):
         """Load the configuration for the Anthropic API client."""
@@ -384,7 +384,10 @@ class AnthropicClient:
             return
 
         # Get the schema of the Pydantic model
-        schema = self._response_format.model_json_schema()
+        if isinstance(self._response_format, dict):
+            schema = self._response_format
+        else:
+            schema = self._response_format.model_json_schema()
 
         # Add instructions for JSON formatting
         format_content = f"""Please provide your response as a JSON object that matches the following schema:
@@ -425,16 +428,25 @@ Ensure the JSON is properly formatted and matches the schema exactly."""
             json_str = content[json_start : json_end + 1]
 
         try:
-            # Parse JSON and validate against the Pydantic model
+            # Parse JSON and validate against the Pydantic model if Pydantic model was provided
             json_data = json.loads(json_str)
-            return self._response_format.model_validate(json_data)
+            if isinstance(self._response_format, dict):
+                return json_str
+            else:
+                return self._response_format.model_validate(json_data)
+
         except Exception as e:
             raise ValueError(f"Failed to parse response as valid JSON matching the schema for Structured Output: {e!s}")
 
 
 def _format_json_response(response: Any) -> str:
     """Formats the JSON response for structured outputs using the format method if it exists."""
-    return response.format() if isinstance(response, FormatterProtocol) else response
+    if isinstance(response, str):
+        return response
+    elif isinstance(response, FormatterProtocol):
+        return response.format()
+    else:
+        return response.model_dump_json()
 
 
 @require_optional_import("anthropic", "anthropic")
@@ -491,12 +503,10 @@ def oai_messages_to_anthropic_messages(params: dict[str, Any]) -> list[dict[str,
                     last_tool_use_index = len(processed_messages) - 1
                 else:
                     # Not using tools, so put in a plain text message
-                    processed_messages.append(
-                        {
-                            "role": "assistant",
-                            "content": f"Some internal function(s) that could be used: [{', '.join(tool_names)}]",
-                        }
-                    )
+                    processed_messages.append({
+                        "role": "assistant",
+                        "content": f"Some internal function(s) that could be used: [{', '.join(tool_names)}]",
+                    })
             elif "tool_call_id" in message:
                 if has_tools:
                     # Map the tool usage call to tool_result for Anthropic
@@ -521,9 +531,10 @@ def oai_messages_to_anthropic_messages(params: dict[str, Any]) -> list[dict[str,
                     tool_result_messages += 1
                 else:
                     # Not using tools, so put in a plain text message
-                    processed_messages.append(
-                        {"role": "user", "content": f"Running the function returned: {message['content']}"}
-                    )
+                    processed_messages.append({
+                        "role": "user",
+                        "content": f"Running the function returned: {message['content']}",
+                    })
             elif message["content"] == "":
                 # Ignoring empty messages
                 pass
