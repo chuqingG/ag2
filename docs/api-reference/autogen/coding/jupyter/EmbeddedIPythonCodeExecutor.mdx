@@ -1,0 +1,499 @@
+---
+sidebarTitle: EmbeddedIPythonCodeExecutor
+title: autogen.coding.jupyter.EmbeddedIPythonCodeExecutor
+---
+<h2 id="autogen.coding.jupyter.EmbeddedIPythonCodeExecutor" class="doc doc-heading">
+    <code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>
+    <span class="doc doc-object-name doc-class-name">EmbeddedIPythonCodeExecutor</span>
+</h2>
+
+```python
+EmbeddedIPythonCodeExecutor(**kwargs)
+```
+
+    (Experimental) A code executor class that executes code statefully using an embedded
+    IPython kernel managed by this class.<br/>**This will execute LLM generated code on the local machine.**
+    
+    Each execution is stateful and can access variables created from previous
+    executions in the same session. The kernel must be installed before using
+    this class. The kernel can be installed using the following command: <br/>`python -m ipykernel install --user --name \{kernel_name}`
+    where `kernel_name` is the name of the kernel to install.<br/>
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `**kwargs` |  |
+
+### Class Attributes
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### kernel_name
+<br />
+
+    <br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### model_config
+<br />
+
+    <br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### output_dir
+<br />
+
+    <br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### timeout
+<br />
+
+    <br />
+
+### Instance Attributes
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### code_extractor
+<br />
+
+    (Experimental) Export a code extractor that can be used by an agent.
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### model_extra
+<br />
+
+    Get extra fields set during validation.<br/>Returns: <br/>    A dictionary of extra fields, or `None` if `config.extra` is not set to `"allow"`.
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>
+#### model_fields_set
+<br />
+
+    Returns the set of fields that have been explicitly set on this model instance.<br/>Returns: <br/>    A set of strings representing the fields that have been set,
+            i.e. that were not filled from defaults.
+
+### Instance Methods
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### construct
+
+```python
+construct(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### copy
+
+```python
+copy(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### dict
+
+```python
+dict(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### execute_code_blocks
+
+```python
+execute_code_blocks(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### from_orm
+
+```python
+from_orm(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### json
+
+```python
+json(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_construct
+
+```python
+model_construct(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_copy
+
+```python
+model_copy(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_dump
+
+```python
+model_dump(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_dump_json
+
+```python
+model_dump_json(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_json_schema
+
+```python
+model_json_schema(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_parametrized_name
+
+```python
+model_parametrized_name(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_post_init
+
+```python
+model_post_init(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_rebuild
+
+```python
+model_rebuild(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_validate
+
+```python
+model_validate(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_validate_json
+
+```python
+model_validate_json(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### model_validate_strings
+
+```python
+model_validate_strings(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### parse_file
+
+```python
+parse_file(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### parse_obj
+
+```python
+parse_obj(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### parse_raw
+
+```python
+parse_raw(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### restart
+
+```python
+restart(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### schema
+
+```python
+schema(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### schema_json
+
+```python
+schema_json(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### update_forward_refs
+
+```python
+update_forward_refs(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### validate
+
+```python
+validate(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />

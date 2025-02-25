@@ -1,0 +1,65 @@
+---
+sidebarTitle: PydanticAIInteroperability
+title: autogen.interop.PydanticAIInteroperability
+---
+<h2 id="autogen.interop.PydanticAIInteroperability" class="doc doc-heading">
+    <code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>
+    <span class="doc doc-object-name doc-class-name">PydanticAIInteroperability</span>
+</h2>
+
+```python
+PydanticAIInteroperability()
+```
+
+    A class implementing the `Interoperable` protocol for converting Pydantic AI tools
+    into a general `Tool` format.<br/>This class takes a `PydanticAITool` and converts it into a standard `Tool` object,
+    ensuring compatibility between Pydantic AI tools and other systems that expect
+    the `Tool` format. It also provides a mechanism for injecting context parameters
+    into the tool's function.
+
+### Static Methods
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### convert_tool
+
+```python
+convert_tool(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### get_unsupported_reason
+
+```python
+get_unsupported_reason() -> str | None
+```
+
+    
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### inject_params
+
+```python
+inject_params(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />

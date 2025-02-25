@@ -1,0 +1,47 @@
+---
+sidebarTitle: LangChainInteroperability
+title: autogen.interop.LangChainInteroperability
+---
+<h2 id="autogen.interop.LangChainInteroperability" class="doc doc-heading">
+    <code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>
+    <span class="doc doc-object-name doc-class-name">LangChainInteroperability</span>
+</h2>
+
+```python
+LangChainInteroperability()
+```
+
+    A class implementing the `Interoperable` protocol for converting Langchain tools
+    into a general `Tool` format.<br/>This class takes a `LangchainTool` and converts it into a standard `Tool` object,
+    ensuring compatibility between Langchain tools and other systems that expect
+    the `Tool` format.
+
+### Static Methods
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### convert_tool
+
+```python
+convert_tool(*args, **kwargs) -> 
+```
+
+    Call self as a function.
+
+<b>Parameters:</b>
+| Name | Description |
+|--|--|
+| `*args` |  |
+| `**kwargs` |  |
+
+<br />
+
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>
+#### get_unsupported_reason
+
+```python
+get_unsupported_reason() -> str | None
+```
+
+    
+
+<br />
